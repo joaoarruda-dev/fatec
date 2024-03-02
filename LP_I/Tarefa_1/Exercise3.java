@@ -1,4 +1,6 @@
-import java.util.Scanner; // 1. importando a classe Scanner
+package Tarefa_1;
+
+import java.util.Scanner;
 
 public class Exercise3 {
     public static void main(String[] args) {
@@ -8,6 +10,8 @@ public class Exercise3 {
             System.out.println("Bem vindo aos exercícios de Linguagem de Programação 1!");
             System.out.println("------------------------------------");
             double P1, E1, E2, API, X, SUB;
+            System.out.println("Sistema para cálculo de notas do aluno");
+            System.out.println("------------------------------------");
             System.out.printf("Informe o valor da P1 do aluno:\n");
             P1 = read.nextDouble();
             read.nextLine();
@@ -44,4 +48,5 @@ public class Exercise3 {
             read.close();
         }
     }
+
 }
