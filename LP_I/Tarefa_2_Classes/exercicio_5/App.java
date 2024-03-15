@@ -40,6 +40,7 @@ public class App {
                         fr.setDenominador(read.nextDouble());
                         double soma = fr.setFracao(fr.getNumerador(), fr.getDenominador());
                         resultado = resultado + soma;
+                        System.out.println("Seu resultado até agora é " + resultado);
                         break;
                     case "2":
                         System.out.println("-----------------------------------");
@@ -48,6 +49,7 @@ public class App {
                         System.out.println("Informe o denominador: (digite 1 caso seja inteiro)");
                         fr.setDenominador(read.nextDouble());
                         resultado = resultado - fr.setFracao(fr.getNumerador(), fr.getDenominador());
+                        System.out.println("Seu resultado até agora é " + resultado);
                         break;
                     case "3":
                         System.out.println("-----------------------------------");
@@ -56,6 +58,7 @@ public class App {
                         System.out.println("Informe o denominador: (digite 1 caso seja inteiro)");
                         fr.setDenominador(read.nextDouble());
                         resultado = resultado / fr.setFracao(fr.getNumerador(), fr.getDenominador());
+                        System.out.println("Seu resultado até agora é " + resultado);
                         break;
                     case "4":
                         System.out.println("-----------------------------------");
@@ -65,10 +68,10 @@ public class App {
                         System.out.println("Informe o denominador: (digite 1 caso seja inteiro)");
                         fr.setDenominador(read.nextDouble());
                         resultado = resultado * fr.setFracao(fr.getNumerador(), fr.getDenominador());
+                        System.out.println("Seu resultado até agora é " + resultado);
                         break;
                     case "5":
                         System.out.println("-----------------------------------");
-
                         System.out.println("Limpando resultado...");
                         resultado = 0;
                         break;
