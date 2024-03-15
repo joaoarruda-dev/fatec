@@ -33,42 +33,24 @@ public class App {
                         System.out.print("-----------------------------------");
                         break;
                     case "1":
-                        System.out.println("-----------------------------------");
-                        System.out.println("Informe o numerador: ");
-                        fr.setNumerador(read.nextDouble());
-                        System.out.println("Informe o denominador: (digite 1 caso seja inteiro)");
-                        fr.setDenominador(read.nextDouble());
-                        double soma = fr.setFracao(fr.getNumerador(), fr.getDenominador());
-                        resultado = resultado + soma;
-                        System.out.println("Seu resultado até agora é " + resultado);
+                        coletarNumeros(fr, read);
+                        resultado = resultado + fr.setFracao(fr.getNumerador(), fr.getDenominador());
+                        mostrarResultado(resultado);
                         break;
                     case "2":
-                        System.out.println("-----------------------------------");
-                        System.out.println("Informe o numerador: ");
-                        fr.setNumerador(read.nextDouble());
-                        System.out.println("Informe o denominador: (digite 1 caso seja inteiro)");
-                        fr.setDenominador(read.nextDouble());
+                        coletarNumeros(fr, read);
                         resultado = resultado - fr.setFracao(fr.getNumerador(), fr.getDenominador());
-                        System.out.println("Seu resultado até agora é " + resultado);
+                        mostrarResultado(resultado);
                         break;
                     case "3":
-                        System.out.println("-----------------------------------");
-                        System.out.println("Informe o numerador: ");
-                        fr.setNumerador(read.nextDouble());
-                        System.out.println("Informe o denominador: (digite 1 caso seja inteiro)");
-                        fr.setDenominador(read.nextDouble());
+                        coletarNumeros(fr, read);
                         resultado = resultado / fr.setFracao(fr.getNumerador(), fr.getDenominador());
-                        System.out.println("Seu resultado até agora é " + resultado);
+                        mostrarResultado(resultado);
                         break;
                     case "4":
-                        System.out.println("-----------------------------------");
-
-                        System.out.println("Informe o numerador: ");
-                        fr.setNumerador(read.nextDouble());
-                        System.out.println("Informe o denominador: (digite 1 caso seja inteiro)");
-                        fr.setDenominador(read.nextDouble());
+                        coletarNumeros(fr, read);
                         resultado = resultado * fr.setFracao(fr.getNumerador(), fr.getDenominador());
-                        System.out.println("Seu resultado até agora é " + resultado);
+                        mostrarResultado(resultado);
                         break;
                     case "5":
                         System.out.println("-----------------------------------");
@@ -85,5 +67,17 @@ public class App {
         } finally {
             read.close();
         }
+    }
+
+    public static void mostrarResultado(double resultado) {
+        System.out.println("Seu resultado até agora é " + resultado);
+    }
+
+    public static void coletarNumeros(Fracao fr, Scanner read) {
+        System.out.println("-----------------------------------");
+        System.out.println("Informe o numerador: ");
+        fr.setNumerador(read.nextDouble());
+        System.out.println("Informe o denominador: (digite 1 caso seja inteiro)");
+        fr.setDenominador(read.nextDouble());
     }
 }
