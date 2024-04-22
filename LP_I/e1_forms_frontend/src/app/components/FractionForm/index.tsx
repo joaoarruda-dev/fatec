@@ -46,13 +46,11 @@ const FractionForm: React.FC = () => {
                     throw new Error(`Erro ao fazer requisição: ${response.status}`);
                 }
                 const res = await response.json();
-                console.log("RES:::", res);
-
                 // const fraction = `${numerator}/${denominator}`;
                 setResult(`${res.numerador}/${res.denominador}`)
             })
             .catch(error => {
-                alert("Valor inválido, coloque os denominadore corretamente")
+                alert("Valor inválido, coloque os denominadores corretamente")
             });
     };
 
