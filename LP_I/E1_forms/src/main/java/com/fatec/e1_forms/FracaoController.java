@@ -17,13 +17,13 @@ public class FracaoController {
         Fracao fr2 = new Fracao(corpo.get(1).getNumerador(), corpo.get(1).getDenominador());
         switch (parametro){
             case "soma":
-                return ResponseEntity.ok(fr2.adicionar(fr));
+                return ResponseEntity.ok(fr.adicionar(fr2));
             case "sub":
-                return ResponseEntity.ok(fr2.subtrair(fr));
+                return ResponseEntity.ok(fr.subtrair(fr2));
             case "div":
-                return ResponseEntity.ok(fr2.dividir(fr));
+                return ResponseEntity.ok(fr.dividir(fr2));
             case "mult":
-                return ResponseEntity.ok(fr2.multiplicar(fr));
+                return ResponseEntity.ok(fr.multiplicar(fr2));
         };
         throw new ErrorResponseException(HttpStatus.BAD_REQUEST);
     }

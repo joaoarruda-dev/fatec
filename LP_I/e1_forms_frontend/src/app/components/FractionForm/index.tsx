@@ -46,7 +46,6 @@ const FractionForm: React.FC = () => {
                     throw new Error(`Erro ao fazer requisição: ${response.status}`);
                 }
                 const res = await response.json();
-                // const fraction = `${numerator}/${denominator}`;
                 setResult(`${res.numerador}/${res.denominador}`)
             })
             .catch(error => {
