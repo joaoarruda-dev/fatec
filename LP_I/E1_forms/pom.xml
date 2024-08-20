@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.4</version>
+		<version>2.6.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.fatec</groupId>
@@ -14,7 +14,7 @@
 	<name>E1_forms</name>
 	<description>E1_forms</description>
 	<properties>
-		<java.version>22</java.version>
+		<java.version>22</java.version> <!-- ou a versão desejada -->
 	</properties>
 	<dependencies>
 		<dependency>
@@ -32,6 +32,32 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Spring JDBC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>5.3.20</version>
+		</dependency>
+
+		<!-- Spring Boot Starter JDBC fornece suporte JDBC básico -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<!-- H2 Database para testes (substitua pelo seu banco de dados real) -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- Dependência do driver JDBC do seu banco de dados (por exemplo, MySQL) -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.29</version>
+		</dependency>
+
     </dependencies>
 
 	<build>

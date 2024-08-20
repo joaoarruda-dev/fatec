@@ -1,6 +1,7 @@
 'use client';
 
 
+import { useRouter } from 'next/navigation';
 import React, { useState, FormEvent } from 'react';
 
 const FractionForm: React.FC = () => {
@@ -13,13 +14,15 @@ const FractionForm: React.FC = () => {
     const [result, setResult] = useState<string | null>(null);
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
+    const router = useRouter();
+
     const handleOptionChange = (option: string) => {
         setSelectedOption(option);
     };
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        if(!selectedOption){
+        if (!selectedOption) {
             return alert("Selecione uma operação!");
         }
         const data =
@@ -40,13 +43,13 @@ const FractionForm: React.FC = () => {
             },
             body: JSON.stringify(data),
         };
-        fetch("http://localhost:8080/fracao?operacao="+selectedOption, options)
+        fetch("http://localhost:8080/fracao/salvar?operacao=" + selectedOption, options)
             .then(async (response: Response) => {
                 if (!response.ok) {
                     throw new Error(`Erro ao fazer requisição: ${response.status}`);
                 }
                 const res = await response.json();
-                setResult(`${res.numerador}/${res.denominador}`)
+                setResult(`${res.data.numerador}/${res.data.denominador}`)
             })
             .catch(error => {
                 alert("Valor inválido, coloque os denominadores corretamente")
@@ -55,6 +58,12 @@ const FractionForm: React.FC = () => {
 
     return (
         <>
+            <button
+                className="mt-5 mb-5 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                onClick={() => { router.push('/fracao/log') }}
+            >
+                Ver calculos anteriores
+            </button>
             <form onSubmit={handleSubmit}>
                 <div className='flex flex-row mb-20'>
                     <div className="max-w-md mx-auto p-6 bg-white rounded shadow-md">
